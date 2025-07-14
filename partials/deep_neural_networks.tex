@@ -143,7 +143,7 @@ Training neural networks takes a lot of time and computational resources. Optimi
     In RMSProp, we have a few additional steps:
 
     \begin{itemize}
-      \item \textbf{Accumulate} the gradients in a moving average: $\mathbf{v}_t = \beta \mathbf{v}_{t-1} + (1 - \beta) \nabla_{\boldsymbol{\uptheta}} J(\boldsymbol{\uptheta})^2$, $\beta \rightarrow$ new hyperparameter ("how much of the gradient history to forget")
+      \item \textbf{Accumulate} the gradients in a moving average: $\mathbf{v}_t = \beta \mathbf{v}_{t-1} + (1 - \beta) \nabla_{\boldsymbol{\uptheta}} J(\boldsymbol{\uptheta})^2$, $\beta \rightarrow$ new hyperparameter ("how much of the gradient history to keep")
       \item \textbf{Scale} the learning rate for each parameter proportional to the inverse root of the accumulated gradient, $\mathbf{v}_t$: $\Delta \boldsymbol{\uptheta} = -\frac{\alpha}{\sqrt{\mathbf{v}_t + \epsilon}} \nabla_{\boldsymbol{\uptheta}} J(\boldsymbol{\uptheta})$, $\epsilon \rightarrow$ small constant to avoid division by zero.
     \end{itemize}
 
